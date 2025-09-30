@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cartita uwu</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #ffe1e1, #ffcccb, #ffb6c1, #ff9999, #ff7f7f, #ff6666);
+            background-size: 600%;
+            font-family: 'Arial', sans-serif;
+            overflow-x: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            position: relative;
+            animation: backgroundShift 10s ease-in-out infinite;
+        }
+
+        @keyframes backgroundShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .container {
+            max-width: 650px;
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            position: relative;
+            text-align: center;
+            margin: 20px;
+            border: 5px double #ff6f61;
+            background: linear-gradient(45deg, #fff, #fff5f5);
+            animation: glow 2s ease-in-out infinite;
+        }
+
+        @keyframes glow {
+            0% { border-color: #ff6f61; box-shadow: 0 0 10px #ff6f61; }
+            50% { border-color: #ff4d4d; box-shadow: 0 0 20px #ff4d4d; }
+            100% { border-color: #ff6f61; box-shadow: 0 0 10px #ff6f61; }
+        }
+
+        .header {
+            background: linear-gradient(90deg, #ff6f61, #ff8c8c);
+            color: white;
+            padding: 25px;
+            border-radius: 15px 15px 0 0;
+            margin: -40px -40px 30px -40px;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 3px solid #ff4d4d;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            font-family: 'Georgia', serif;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .letter, .notes {
+            font-size: 1.2em;
+            line-height: 1.7;
+            color: #333;
+            margin-bottom: 30px;
+            position: relative;
+            padding: 20px;
+            background: rgba(255, 245, 245, 0.8);
+            border-radius: 10px;
+            border: 2px dashed #ff9999;
+        }
+
+        .letter p, .notes p {
+            margin: 15px 0;
+        }
+
+        .particle {
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            background: #ff4d4d;
+            opacity: 0.7;
+            animation: float 7s infinite;
+        }
+
+        .particle.circle {
+            border-radius: 50%;
+        }
+
+        .particle.diamond {
+            transform: rotate(45deg);
+        }
+
+        .particle.triangle {
+            width: 0;
+            height: 0;
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            border-bottom: 14px solid #ff4d4d;
+            background: none;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0); opacity: 0.7; }
+            100% { transform: translateY(-1100px); opacity: 0; }
+        }
+
+        .particle:nth-child(1) { left: 5%; animation-delay: 0s; }
+        .particle:nth-child(2) { left: 10%; animation-delay: 0.3s; }
+        .particle:nth-child(3) { left: 15%; animation-delay: 0.6s; }
+        .particle:nth-child(4) { left: 20%; animation-delay: 0.9s; }
+        .particle:nth-child(5) { left: 25%; animation-delay: 1.2s; }
+        .particle:nth-child(6) { left: 30%; animation-delay: 1.5s; }
+        .particle:nth-child(7) { left: 35%; animation-delay: 1.8s; }
+        .particle:nth-child(8) { left: 40%; animation-delay: 2.1s; }
+        .particle:nth-child(9) { left: 45%; animation-delay: 2.4s; }
+        .particle:nth-child(10) { left: 50%; animation-delay: 2.7s; }
+        .particle:nth-child(11) { left: 55%; animation-delay: 3.0s; }
+        .particle:nth-child(12) { left: 60%; animation-delay: 3.3s; }
+        .particle:nth-child(13) { left: 65%; animation-delay: 3.6s; }
+        .particle:nth-child(14) { left: 70%; animation-delay: 3.9s; }
+        .particle:nth-child(15) { left: 75%; animation-delay: 4.2s; }
+        .particle:nth-child(16) { left: 80%; animation-delay: 4.5s; }
+        .particle:nth-child(17) { left: 85%; animation-delay: 4.8s; }
+        .particle:nth-child(18) { left: 90%; animation-delay: 5.1s; }
+        .particle:nth-child(19) { left: 95%; animation-delay: 5.4s; }
+        .particle:nth-child(20) { left: 100%; animation-delay: 5.7s; }
+
+        .sparkle {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: #ff9999;
+            border-radius: 50%;
+            animation: sparkle 4s infinite;
+            opacity: 0.5;
+        }
+
+        @keyframes sparkle {
+            0% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.5); opacity: 0.8; }
+            100% { transform: scale(1); opacity: 0.5; }
+        }
+
+        .sparkle:nth-child(21) { top: 10%; left: 10%; animation-delay: 0s; }
+        .sparkle:nth-child(22) { top: 20%; left: 80%; animation-delay: 0.5s; }
+        .sparkle:nth-child(23) { top: 30%; left: 20%; animation-delay: 1s; }
+        .sparkle:nth-child(24) { top: 40%; left: 70%; animation-delay: 1.5s; }
+        .sparkle:nth-child(25) { top: 50%; left: 15%; animation-delay: 2s; }
+
+        .footer {
+            font-size: 1em;
+            color: #555;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 3px double #ff6f61;
+            position: relative;
+        }
+
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 30px;
+            height: 30px;
+            background: #ff4d4d;
+            border-radius: 50%;
+            box-shadow: 0 0 10px #ff4d4d;
+        }
+
+        .signature {
+            font-family: 'Brush Script MT', cursive;
+            font-size: 2em;
+            color: #ff4d4d;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+        }
+
+        .decor {
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            background: #ff6f61;
+            opacity: 0.5;
+            animation: pulse 3s ease-in-out infinite;
+        }
+
+        .decor.circle {
+            border-radius: 50%;
+        }
+
+        .decor.diamond {
+            transform: rotate(45deg);
+        }
+
+        .decor.triangle {
+            width: 0;
+            height: 0;
+            border-left: 12px solid transparent;
+            border-right: 12px solid transparent;
+            border-bottom: 20px solid #ff6f61;
+            background: none;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.3); opacity: 0.7; }
+            100% { transform: scale(1); opacity: 0.5; }
+        }
+
+        .decor-top-left { top: 15px; left: 15px; }
+        .decor-top-right { top: 15px; right: 15px; }
+        .decor-bottom-left { bottom: 15px; left: 15px; }
+        .decor-bottom-right { bottom: 15px; right: 15px; }
+
+        .toggle-button {
+            background: linear-gradient(90deg, #ff6f61, #ff8c8c);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            font-family: 'Georgia', serif;
+            border-radius: 10px;
+            cursor: pointer;
+            margin: 20px auto;
+            display: block;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .toggle-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(255, 77, 77, 0.7);
+        }
+
+        .notes {
+            display: none;
+        }
+
+        .notes.active {
+            display: block;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                margin: 15px;
+                padding: 25px;
+            }
+
+            .header h1 {
+                font-size: 1.8em;
+            }
+
+            .letter, .notes {
+                font-size: 1em;
+            }
+
+            .particle, .sparkle {
+                width: 10px;
+                height: 10px;
+            }
+
+            .particle.triangle {
+                border-left: 6px solid transparent;
+                border-right: 6px solid transparent;
+                border-bottom: 10px solid #ff4d4d;
+            }
+
+            .decor {
+                width: 18px;
+                height: 18px;
+            }
+
+            .decor.triangle {
+                border-left: 9px solid transparent;
+                border-right: 9px solid transparent;
+                border-bottom: 15px solid #ff6f61;
+            }
+
+            .toggle-button {
+                padding: 10px 20px;
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Feliz Día del Novio, Mi Vida</h1>
+        </div>
+        <div class="letter">
+            <p>Wenas mi vida como estas, espero que bien, adivina mi vida, hoy 3 de octubre es el dia del novio¡ :3 , aunque nunca lo he celebrado pero me dio la idea de escribirte esto, porque a pesar de esta situacion...siempre has estado en mi mente y corazon, por eso quiero desearte un feliz dia del novio mi niño, estoy agradecida con el destino por haberme hecho conocerte, gracias por haberme dado tanto amor que hasta mi yo del pasado no se creeria que me siento muy querida y que porfin somos felices, bueno no tanto debido a este problema pero almenos estoy feliz de poder saber almenos como te va, eres esa luz que aparecio de la nada y me dijo que merecia ser feliz, y en realidad, me siento muy amada y querida cuando pienso en ti, me pregunto si estas bien o si te fue bien en tu dia, tambien me pregunto si estaras feliz o triste, o si te enfermaste o algo y me empiezo a preocupar xd, quiero que sepas que te sigo amando, y que el amor que tengo sigue aqui en mi corazoncito y crece cada dia mas y mas hasta el punto de chillar por extrañarte tanto, y pos sigo culpandome de eso y que por mi culpa estamos asi pero ese no es el punto mi vida, espero te haya hido bien en lo de tu banda, tambien espero que te la hayas pasado bien en aquella playa que me dijiste y si es asi, pos me alegro por ti mi vida, tambien espero que no te haya pasado nada malo porque al pensar en ese viaje me preocupe mucho, pero en fin, gracias por aparecer en mi vida mi niño, quiero que sepas que te amo mucho y que a pesar de lo de ahora siempre pienso en ti, cuando me levanto, cuando como algo (chale no pos ahora solo almuerzo poquito y despues ya ni como todo el dia porque ya no me dan ganas xd porfavor no me pegues :,3), cuando voy a la escuela o veo el atardecer de camino a mi casa, tambien casi siempre apareces en mis sueños, la mayoria son felices, pero de alguna manera en mis sueños siempre estas alli diciendome que no me sienta sola porque ya estoy contigo y es verdad, no me sentire nunca mas sola mientras tu estes mi vida, como yo tambien estoy apoyandote en silencio, esperando a algun dia volver a estar asi juntitos como antes :3, chale ya me llego la trizteza, echo de menos cuando hablabamos y asi pero ahora no son mas recuerdos los cuales atesorare con el alma y corazon esperando volver a hablar con su amado y el amor de mi vida, puede que suene un poquito cursi pero sabes, te amo tanto que literalmente me puse a hacer manualidades y flores para ti aunque no estes a mi lado pero eso no quita que te ame demasiado como para imaginar que estoy hablando contigo pero ande hablando sola :,3.</p>
+            <p>En este dia del novio (me entere hace una semana recien que existe en efecto este dia xd) dire que eres el mejor regalo que me haya podido dar la vida o el destino, aprecio demasiado todo el amor que me das porque nunca me senti tan amada y tan importante para alguien, gracias a ti aprendi que no es necesario lastimarme o ofrecerme algo a cambio para recibir amor, que el amor es sincero, porque contigo aprendi que el amor es entenderse el uno al otro, consolarlo y/o escucharlo cuando esta triste, apoyar aunque en silencio, osea, simplemente estoy demasiado segura de algo; zi, que quiero pasar lo que me queda de vida a tu lado, quiero amarte y llegar a esa boda y a esa familia que planeamos, justo como la casita y todo :3, por eso todos los dias despierto con un motivo y ese eres tu, el que me dio luz, color y morivo a mi vida, que me enseño que es amar y que me quieres tal y como soy, que no me juzga y solo se queda alli, acompañandome, haciendome sentir segura, querida y importante para alguien, porque encerio, eres el primero al cual me ha dedicado algunas canciones, me haya echo cartas y tambien me haya echo reir, me haya consolado o simplemente haya jugado conmigo algun juego, eres...el primero que se haya tomado el tiempo de conocerme y me haya amado sin mascaras, que no me juzgo ni me vio raro, tambien por eso te amo con todas mi fuerzas, sabes porque mas mi vida? por ser simplemente tu mismo y demostrarme lo que es amar de verdad, por intentar hacerme reir o almenos tener un tema de converzacion o debates los cuales siempre ganabas...por preocuparte por mi y cosas asi, y pos como sabes no soy buena explicando pero si pudiera esta cartita no tendria fin, porque todo lo que siento por ti es infinito y nunca acabara, porque te amo tanto que te buscaria en esta y otras vidas para encontrarte y amarte por siempre y para siempre. te amo mucho mi niño, muak, te amo mucho.</p>
+            <p>Gracias por ser mi apoyo, mi alegría y mi todo. Te amo con cada pedacito de mi corazón, eres muy especial para mi y quiero recordartelo hciendote esta cartita, me encantaria que vieras a travez de mis ojos para que veas y sientas todo el amor que siento ahora, que crece cada dia mas y mas, hasta este punto creo que el amor que te tengo es demasiado, tanto que te echo de menos, tanto que ya me da insomnio de tan solo pensar en si estaras bien, mi vida, se que aun somos jovenes y se que soy mas o menos inmadura pero quiero decirte con todo el amor que siento que te amo, no es un te amo pasajero y corto, es un te amo que desea con muchas ansias poder vvvir una vida a tu lado, que sueña gracias a ti y que quiere pasar el resto de sus dias a tu lado, gracias por amarme, se que puede ser hasta agotador tener que hacer otra carta o ns, porque aveces la trizteza me gana y mi mente me dice que ya te estas olvidando de mi y que estas mejor sin mi, pero mi corazon aun esta alli amandote y al final solo me queda chillar, nose cuando ni como, pero sabes, te amo mas de lo que puedas imaginar, aunque no te sienta cerca, te pienso siempre y sigo guardando este amor que crece en mi alma y corazon cada dia, que recuerda dcon nostalgia y empieza a llorar, y en realidad, creo que ya me dio miedito xd, me dio miedo el pensar que ya...que ya te estoy perdiendo y que al final solo me diras que te vas y no sabria que hacer si eso pasa, me derrumbaria sinceramente porque lit ando solita en mi cole, en mi casita pos me encierro, y lo unico que me alegra o almenos me pone un poco feliz es, si, lo unico que me hace un poco feliz es volver a leer tus cartitas una y otra vez para luego empezar a llorar y seguir escribiendo cartitas con codigos xd, y se, se lo dificil que es tener que estar asi, sin hablar, y...en silencio, porque siento que un dia vas a encontrar a alguien mas bonita, o mas inteligente o a alguien simplemente mas libre, que tenga mas libertad y que puedas verla abrazarla.., si, si pasa no voy a detenerte porque despues de all es tu felicidad pero de pensar en eso ya me pongo trizte, aun asi a pesar de todo eso, quiero escoger una y mil veces amarte a ti y a nadie mas, prefiero esperar a no volver a sentir este amor que siento contigo, prefiero quedarme sola si no es contigo porque en realidad te amo, mas de lo que puedas imaginar, porque haria cualquier cosa con tal de verte y abrazarte aunquesea un minuto o unos segundos porque en realidad tu le diste sentido a mi vida y si te vas mi vida ya no tendria sentido ni color, y sabes quiero que sepas que te amo con toda mi alma y corazon, te amo de aqui hasta el fin del universo, te amo mucho, te dejare otro apartado de algunas notas que hice esta semana xd, espero te guste, muack, te amo mucho mi vida.</p>
+        </div>
+        <button class="toggle-button" onclick="toggleNotes()">Ver notitas xd</button>
+        <div class="notes" id="notesSection">
+            <p>1. No pos vi que te fue bien en lo de las bandas mi vida, pero aunque hayan perdido talvez hasta el siguiente año ganen, yo se que puedes, a si, por sierto muy bonito lugares, porque en relidad solo vi el mar en fotos de google xd pero se ve bonito (chale no tengo mar 💔), pero en conclusion, ta bonito los lugares :3</p>
+            <p>2. Vi un atardecer súper bonito y me acordé de cuando me explicabas el lore de genshin impact por alguna razon. Quise que estuvieras ahí para verlo conmigo, te imaginé a mi lado diciendo algo chistoso para hacerme reír xd (mi imaginacion anda potente xd).</p>
+            <p>3. En la escuela cantaron una canción que me recordó a ti, no pos me puse un poquito triste y como nadie lo noto pos estuve joya, de camino a mi casa por ultimamente aparecen de la nada parejitas y me intereso una en especial, pues el cgico tenia el pelo churco pero no tenia lentes xd y la chica con la que iba era medio bajita y me imagine como seria caminar o pasear contigo, espero y si se cumpla mi vida, muack, te amo.</p>
+            <p>4. Hice un ramo de flores y una cajita con manualidades adentro para ti, si, se que ya me afecto no poder hablarte pero esta bien, esos regalos y manualidades que hago para ti pos las guardo donde nadie pueda verlo, aunque no estes a mi lado no quita que no te haga manualidades, porque yo las hago pero pos no te las puedo dar porque...estoy a dos paises de distancia *llora* aun asi te las guardare y cuando te vea y estemos juntos porfin te dare todo y cada uno para que los veas :3.</p>
+            <p>5. No pos soñe que estabamos alli en la playa...jugando con la arena, depues comimos helado, tu agarraste una de fresa y yo de granizado, mientras la noche se acercaba nosotros estabamos alli mirando el paisaje charlando y tomando del helado o comiendo xd despues veiamos las estrellas, tu mirabas las estrellas pero yo no podia concentrarme prque miraba lo feliz que estabas, si, no podia ver tu cara pero almenos sabia que estabas feliz, eso me hizo sonreir, lo unico que recuerdo de lo que dije en ese sueño fue: "tu crees que estemos asi juntito por siempre?" y tu me respondiste: "sip, ademas dijimos que tendriamos todo lo que soñamos juntos siempre, nunca me separaria de ti", despues solo me levante y te cubri con una manta, no pos ya no recuerdo mas porque mi alrma sono para ir a mis clases en la mañana, pero sabes, ese sueño fue uno de los poco que me alegraban el dia y me hacian fantasear o simplemente pensaba mas en ti y me ponia un poco mas feliz, en fin, siempre estas en mis sueños y los haces mas felices :3. </p>
+            <p>6. Estos dias empezo a llover por donde vivo xd, era de tarde y pos ya era salida, eran como las 5 y media de la tarde y llovia horrible, lo unico que tenia puesto era el deprtivo de mi cole y mi bufanda, la lluvia me recordo a ti y pos solo me anime y comence a ir a mi casa tranquilamente a mi cas, algunos del cole me miraban raro pero mientras caminaba en la lluvia me puse a imaginar como si estubiera caminando contigo y pos me ponia hablar sola como si estubiera hablando contigo, llegue a mi casa mojada y al dia siguiente ya me enferme, de echo sigo enferma xd :,3. </p>
+            <p>7. La vida pide mucho pero yo solo pido poder tener un bonito futuro a tu lado porque te amo mucho, muack, te amo mucho mi vida.</p>
+            <p>8. No pos lo que quisiera ahora seria que te cuides bien porque sino con quien me voy a casar, necesito tener un futuro bonito contigo mi vida</p>
+            <p>9. Si te preguntas el porque del apodo "yandy" es porque pos en mis sueños siempre te llamaba asi entonces porque no llamarte asi ahora? y pos de alli salio xd, aveces me pregunto si tienes mas apodos para mi, en fin eso no debe tener importancia para ti de seguro xd.</p>
+            <p>10. Me siento muy afortunada de poder estar contigo mi vida, sip, lo se, aveces me gana la ezquizo y me pongo a imaginar escenarios ficticios contigo, esque wn, te extraño mucho y cuando pienso el porque me pasa esto a mi me empiezo a culpar, porque creo que  todo lo que esta pasando es por mi culpa y que por mi culpa estamos asi, despues me llega la ansiedad y ya me afecto porque no pos ya son 4-5 dias que no duermo y que me la paso escuchando musica y chillando en silencio haciendome bolita xd, porque por las noches suelo ponerme triste casi siempre, en mi mente aparecen preguntas como: ¿y si esta mejor sin mi?¿y si simplemente me olvida?¿y si solo me escribe por pena? ¿o quizas tiene lastima de mi? ¿y si ya se decepciono de mi como los demas? ¿y si me va a dejr como todo lo hicieron?, y pos la culpa me invade :,3, y sabes, perdon, perdon por hacernos esto, porque se lit que es mi culpa, pero a la vez gracias por amarme, nunca crei que podria amar y sentirme amada asi, eres como esa luz que aparecio de la nada y me salvo, encerio te amo mi niño, muack, te amo.</p>
+            <p>11. adivina mi master, el 21 que era como un tipo festival habia tipo una actividad que era hacer cartas anonimas y era voluntacio asique no hice nada pero luego me llego una carta y adivina de quien era, era de la examiga de la que te conte alguna vez que era de argentina, no pos nose si te conte pero esa ex amistad toxia me escribio en una carta tipo "volvamos a ser amigas" y pos ese dia no me la pase bien porque pos la carta me hizo recordar como me sentia antes y pos al final no respondi esa carta porque ya te tengo a ti ¿porque querria a alguien mas si tu eres mi amigo, niño hermoso, mi novio, mi futuro esposo o mi todo? asique no pos esa es una demostracion de que prefiero estar contigo a que con alguien mas, ademas de que tambien en el cole no pos ya me acostumbre a imaginar como seria estar contigo, tambien que yo tengo fe de que un dia voy a aparecer de la nada como la otra vez y decir "regrese mi vida, podemos hablar de nuevo xd" :3</p>
+            <p>12. No pos hoy es 2 de octubre (si, probablemente leas esto el 3 osea mañana xd),creo que ya traume a la pobre de mi prima porque hace unas horas me encontro llorando por estar leyendo las cartas que me mandas una y otra vez y me dijo: "we....te estas volviendo migajera" y no pos yo diria "aja, ojala tu tuvieras que vivir a base de cartas con tu amado 😒" y me miro con una cara de que me quedia dar un zape porque ya la harte de que casi siempre me encuentre chillando xd, despues me trato de animar pero no pudo xd.</p>
+            <p>13. no pos ahi te va un poema masoquista que hice xd (porfavor no me pegues :,3)                        Oh, amor mío, mi sangre es tu río,
+por ti me desangro, mi pulso es un lío.
+Tus ojos, volcanes que abrasan mi ser,
+y en cada quemadura, te juro querer.
+
+Por ti cruzaría desiertos ardientes,
+caminaría descalzo sobre espinas candentes.
+Tu desprecio, mi cielo; tu furia, mi hogar,
+por un roce tuyo, me dejo destrozar.
+
+Arráncame el alma, pisotea mi vida,
+que en cada pedazo, mi amor se liquida.
+Por tu risa fría, mi cuerpo se quiebra,
+y aun roto, mi pecho tu nombre celebra.
+
+Por ti desafiaría tormentas y mares,
+escalaría abismos, me hundiría en altares.
+Si me ignoras, mi amor se hace eterno,
+pues en tu silencio construyo mi infierno.
+
+Átame a tu sombra, que no quiero sol,
+por una mirada, soporto el dolor.
+Mi vida, mi todo, te entrego sin fin,
+por amarte, mi alma se rinde ante ti.</p>
+            <p>________________________________________________________</p>
+            <p>Ahora se viene los sueños que me pediste que pusiera a la siguiente carta que te mandara osea esta asique alli te van xd</p>
+            <p>--Primero....tener una casita con jardin asi como deciamos o hablabaos antes :3</p>
+            <p>--Que cuando porfin estemos juntos vayamos a pasear o comer algo y hablar sobre nuestro futuro y asi.</p>
+            <p>--Obiamente tambien casarme contigo porque si no es contigo no es con nadie.</p>
+            <p>--Aver, se que me da pena pero otra de mis objetivos seria hablar de llamada contigo tambien xd.</p>
+            <p>--Un dia ir al cine o a comer pizza juntos, tranquilitos, puede que sea o parezca algo aburrido pero me encantaria hacerlo alguna vez.</p>
+            <p>--Mirar toda una seria o jugar todo el dia juntos, ns capaz hasta dices que no pero jugare o mirare cualquier cosa que tu prefieras mi vida :3</p>
+            <p>--Caminar o bailar en la lluvia, aunque al dia siguiente vamos a aparecer bien enfermos pero esta bien con tal detenerte cerca me basta.</p>
+            <p>--Pos...viajar contigo a cualquier parte, no importa donde sea mientras este contigo estaria muy feliz ;3</p>
+            <p>--Tener una mascota de los dos, osea como un crio o niño y nosotros seriamos los padres como los conejos y gatos xd.</p>
+            <p>--Conocer a tu familia y convivir, seh, se que talvez pase algo o quien sabe pero me encantaria conocer a tu familia en persona y asi.</p>
+            <p>En resumen, podria hacer cualquier cosa con tal de que estes a mi lado, sere feliz aunque con un abrazo, porque a mi nunca me han interezado las salidas y eso porque simplemente prefiero estar en mi casita xd, a pesar de todo quiero que sepas que el unico sueño que tengo siempre presente es tener ese bonito futuro del cual hablabamos, tengo fe y estoy segura de que va a pasar, se que va a ser dificil, no lo niego pero recuerda que yo te seguire amando hasta el final de mis dias porque eres el unico con e que quiero compartir mi vida y al unico que amo y amare toda mi vida, en fin, quiero que te me cuides, comas bien, te me abriges si te hace frio, que te vaya bien en tu cole y recuerda siempre pero siempre, que te amo con toda mi alma y corazon, te amo, muack, te amo mucho :3.</p>
+        </div>
+        <div class="footer">
+            <p class="signature">Con todo mi amor, Kisy (Tu futura prometida, esposa y etc xd)</p>
+        </div>
+        <div class="decor circle decor-top-left"></div>
+        <div class="decor diamond decor-top-right"></div>
+        <div class="decor triangle decor-bottom-left"></div>
+        <div class="decor circle decor-bottom-right"></div>
+    </div>
+    <div class="particle circle"></div>
+    <div class="particle diamond"></div>
+    <div class="particle triangle"></div>
+    <div class="particle circle"></div>
+    <div class="particle diamond"></div>
+    <div class="particle triangle"></div>
+    <div class="particle circle"></div>
+    <div class="particle diamond"></div>
+    <div class="particle triangle"></div>
+    <div class="particle circle"></div>
+    <div class="particle diamond"></div>
+    <div class="particle triangle"></div>
+    <div class="particle circle"></div>
+    <div class="particle diamond"></div>
+    <div class="particle triangle"></div>
+    <div class="particle circle"></div>
+    <div class="particle diamond"></div>
+    <div class="particle triangle"></div>
+    <div class="particle circle"></div>
+    <div class="particle diamond"></div>
+    <div class="sparkle"></div>
+    <div class="sparkle"></div>
+    <div class="sparkle"></div>
+    <div class="sparkle"></div>
+    <div class="sparkle"></div>
+    <script>
+        function toggleNotes() {
+            const notesSection = document.getElementById('notesSection');
+            notesSection.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
